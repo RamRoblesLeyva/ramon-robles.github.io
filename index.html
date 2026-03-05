@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ram Robles | Cloud Engineer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--bg:#0f172a;
+--card:#1e293b;
+--text:white;
+--accent:#3b82f6;
+}
+
+.light{
+--bg:#f8fafc;
+--card:white;
+--text:#0f172a;
+--accent:#2563eb;
+}
+
+body{
+margin:0;
+font-family:'Inter',sans-serif;
+background:var(--bg);
+color:var(--text);
+transition:0.3s;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 10%;
+position:sticky;
+top:0;
+background:var(--bg);
+}
+
+.logo{
+font-weight:700;
+font-size:20px;
+}
+
+button{
+background:var(--accent);
+border:none;
+padding:8px 14px;
+border-radius:8px;
+color:white;
+cursor:pointer;
+}
+
+.hero{
+padding:120px 10%;
+text-align:center;
+}
+
+.hero h1{
+font-size:48px;
+margin:0;
+}
+
+.hero p{
+opacity:0.7;
+margin-top:10px;
+}
+
+.section{
+padding:80px 10%;
+}
+
+.section h2{
+margin-bottom:40px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:var(--card);
+padding:20px;
+border-radius:12px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+}
+
+.timeline{
+border-left:2px solid var(--accent);
+padding-left:20px;
+}
+
+.timeline-item{
+margin-bottom:30px;
+}
+
+.timeline-item h3{
+margin:0;
+}
+
+footer{
+text-align:center;
+padding:40px;
+opacity:0.6;
+}
+
+.fade{
+opacity:0;
+transform:translateY(30px);
+transition:1s;
+}
+
+.fade.show{
+opacity:1;
+transform:none;
+}
+
+@media(max-width:768px){
+.hero h1{
+font-size:34px;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">Ram Robles</div>
+
+<button onclick="toggleMode()">🌙</button>
+
+</header>
+
+<section class="hero fade">
+
+<h1>Cloud Engineer</h1>
+
+<p>Azure • .NET • Automation • APIs • SQL</p>
+
+</section>
+
+<section class="section fade">
+
+<h2>About Me</h2>
+
+<p>
+Cloud engineer focused on automation, backend development and cloud architecture using Microsoft Azure technologies.
+</p>
+
+</section>
+
+<section class="section fade">
+
+<h2>Projects</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Automation System</h3>
+<p>Power Automate workflows integrating SQL and Teams.</p>
+</div>
+
+<div class="card">
+<h3>SQL Backup Automation</h3>
+<p>PowerShell scripts for automated database backups to OneDrive.</p>
+</div>
+
+<div class="card">
+<h3>API Integrations</h3>
+<p>.NET APIs integrating Microsoft Graph and internal systems.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section fade">
+
+<h2>Experience</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<h3>Cloud Engineer</h3>
+<p>The Anglo Foundation</p>
+</div>
+
+<div class="timeline-item">
+<h3>.NET Developer</h3>
+<p>Automation and enterprise integrations</p>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 Ram Robles
+
+</footer>
+
+<script>
+
+function toggleMode(){
+document.body.classList.toggle("light")
+}
+
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show")
+}
+})
+})
+
+document.querySelectorAll(".fade").forEach(el=>{
+observer.observe(el)
+})
+
+</script>
+
+</body>
+</html>
